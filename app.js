@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const grid = document.querySelector(".grid");
+  var cardsChosen = [];
+  var cardsChosenId = [];
 
   //Create the game board
   const createBoard = () => {
@@ -66,6 +68,22 @@ document.addEventListener("DOMContentLoaded", () => {
       //   card.addEventListener("click", flipcard);
       //append each card to the grid element
       grid.appendChild(card);
+    }
+  };
+  createBoard();
+
+  //Flip your card
+
+  const flipcard = () => {
+    var cardId = this.getAttribute("data-id");
+    //create an array of cards chosen
+    cardsChosen.push(cardArray[cardId].name);
+    cardsChosenId.push(cardArray[cardId]);
+    //add an image to the square that is clicked to invoke this function
+    //based on the cardId it holds
+    this.setAttribute("src", cardArray[cardId].img);
+    if (cardsChosen.length === 2) {
+      setTimeout(checkForMatch, 500);
     }
   };
 });
