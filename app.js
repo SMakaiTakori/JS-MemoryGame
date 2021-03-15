@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.setAttribute("src", "images/blank.png");
       card.setAttribute("data-id", i);
       //flipcard function to be called on click of each card
-      //   card.addEventListener("click", flipcard);
+      card.addEventListener("click", flipcard);
       //append each card to the grid element
       grid.appendChild(card);
     }
