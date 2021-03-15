@@ -50,4 +50,22 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "images/pizza.png",
     },
   ];
+
+  const grid = document.querySelector(".grid");
+
+  //Create the game board
+  const createBoard = () => {
+    //loop through the cardsArray
+    for (let i = 0; i < cardArray.length; i++) {
+      //for each card create an image element
+      var card = document.createElement("img");
+      //initially the card will be blank
+      card.setAttribute("src", "images/blank.png");
+      card.setAttribute("data-id", i);
+      //flipcard function to be called on click of each card
+      //   card.addEventListener("click", flipcard);
+      //append each card to the grid element
+      grid.appendChild(card);
+    }
+  };
 });
